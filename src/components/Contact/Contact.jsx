@@ -2,7 +2,7 @@ import style from "./Contact.module.css";
 import { BsPersonFill } from "react-icons/bs";
 import { BsTelephoneFill } from "react-icons/bs";
 
-const Contact = ({ name, number }) => {
+const Contact = ({ id, name, number, onDelete }) => {
   return (
     <>
       <div className={style.contactBox}>
@@ -15,7 +15,11 @@ const Contact = ({ name, number }) => {
           {number}
         </p>
       </div>
-      <button type="button" className={style.btnDelete}>
+      <button
+        type="button"
+        className={style.btnDelete}
+        onClick={() => onDelete(id)}
+      >
         Delete
       </button>
     </>
